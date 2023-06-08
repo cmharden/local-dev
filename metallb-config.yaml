@@ -1,0 +1,18 @@
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: core-net-172.20.1.233-172.20.1.243
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.20.1.233-172.20.1.243
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: metallb-pool
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - core-net-172.20.1.233-172.20.1.243
